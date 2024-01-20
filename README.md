@@ -2,7 +2,8 @@
 
 ### 项目结构介绍
 * conf 配置层
-* db 数据库模型层
+* db 数据库
+* entity 请求与响应的结构
 * handler 接口层
 * logic 接口逻辑层
 * middleware 中间件层

@@ -1,7 +1,18 @@
 package logic
 
-func (h *Handler) UserRegister() (string, error) {
-	return "注册成功", nil
+import (
+	"free-community/db/model"
+	"free-community/entity"
+	"log"
+)
+
+func (h *Handler) UserRegister(req entity.UserRegisterReq) (string, error) {
+	if err := h.DB().Create(&model.User{
+		Name: req.Name,
+	}).Error; err != nil {
+		log.Panicln(err)
+	}
+	return "ok", nil
 }
 
 func (h *Handler) UserInfo() (string, error) {
